@@ -16,10 +16,9 @@ public class PickupScript : MonoBehaviour
 
     public void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.name == "Player")
-        {
+        if (col.gameObject.name == "Player") {
             Destroy(gameObject);
-            //set player state naar 'heeft iets gepickupt'
+            col.gameObject.tag = "HasOrb";
         }
     }
 }

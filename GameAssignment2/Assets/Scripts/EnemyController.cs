@@ -25,6 +25,7 @@ public class EnemyController : MonoBehaviour
     void OnCollisionEnter(Collision col) {
         if(!isNeutral && col.gameObject.tag == "HasOrb") {
             MakeNeutral();
+            col.gameObject.tag = null;
         }
     }
 
