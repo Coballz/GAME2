@@ -41,7 +41,7 @@ public class EnemyController : MonoBehaviour
     private void followPlayer()
     {
         //Calculate distance
-        Vector3 distance = transform.position - player.position;
-        transform.Translate(-distance * enemySpeed * Time.deltaTime);
+        Vector3 distance = player.position - transform.position;
+        transform.Translate(Vector3.Normalize(distance) * enemySpeed * Time.deltaTime);
     }
 }
